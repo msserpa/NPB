@@ -13,10 +13,10 @@ OBJS = is.o \
 
 
 ${PROGRAM}: config ${OBJS}
-	${CLINK} ${CLINKFLAGS} -o ${PROGRAM} ${OBJS} ${C_LIB}
+	${CLINK} -mcmodel=large ${CLINKFLAGS} -o ${PROGRAM} ${OBJS} ${C_LIB}
 
 .c.o:
-	${CCOMPILE} $<
+	${CCOMPILE} -mcmodel=large $< 
 
 is.o:             is.c  npbparams.h
 
