@@ -1,0 +1,12 @@
+#!/bin/sh
+#SBATCH --job-name=NAS
+#SBATCH --time=72:00:00
+#SBATCH --partition=hype
+#SBATCH --exclusive
+
+echo "Running on $SLURM_JOB_NODELIST"
+
+#./memoryUsage $1
+/usr/bin/time -f %e ./$1 1> /dev/null 2> tmp.`hostname`
+TIME=`cat tmp.$(hostname)`
+echo $1,$TIME >> `hostname`.nas.time
