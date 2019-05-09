@@ -1,4 +1,4 @@
-SHELL=/bin/sh
+SHELL=/bin/bash
 BENCHMARK=is
 BENCHMARKU=IS
 
@@ -10,10 +10,10 @@ OBJS = is.o ${COMMON}/c_print_results.o ${COMMON}/c_timers.o
 
 
 ${PROGRAM}: config ${OBJS}
-	${CLINK} ${CLINKFLAGS} -o ${PROGRAM} ${OBJS} ${CMPI_LIB}
+	${CLINK} -mcmodel=large ${CLINKFLAGS} -o ${PROGRAM} ${OBJS} ${CMPI_LIB}
 
 .c.o:
-	${CCOMPILE} $<
+	${CCOMPILE} -mcmodel=large $<
 
 is.o:             is.c  npbparams.h
 
