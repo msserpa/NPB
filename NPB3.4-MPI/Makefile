@@ -1,4 +1,4 @@
-SHELL=/bin/sh
+SHELL=/bin/bash
 CLASS=U
 SUBTYPE=
 VERSION=
