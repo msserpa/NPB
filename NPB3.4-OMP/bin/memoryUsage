@@ -14,7 +14,7 @@ then
 	exit 1
 fi
 
-./$1 &
+./"$@" &
 
 while [ -f "/proc/$!/status" ]; do
 	R=`grep -s VmPeak /proc/$!/status | awk '{print $2}'`
