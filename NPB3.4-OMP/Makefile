@@ -49,6 +49,7 @@ dc: header
 # Awk script courtesy cmg@cray.com, modified by Haoqiang Jin
 suite:
 	@ awk -f sys/suite.awk SMAKE=$(MAKE) $(SFILE) | $(SHELL)
+	@ ./Name
 
 
 # It would be nice to make clean in each subdirectory (the targets
